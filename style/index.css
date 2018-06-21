@@ -1,0 +1,11 @@
+#mybar{
+    float: left;
+    width: 15%;
+}
+#equipment_img{
+    position: absolute;;
+    width: 30px;
+    height: 30px;
+    top:60px;
+    left:20px;
+}
