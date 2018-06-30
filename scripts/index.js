@@ -33,16 +33,16 @@ function putIntoBar(stuff, bar) {
     for (let i = 0; i < stuffKey.length; i++) {
         for (let j = 0; j < barKey.length; j++) {
             if (stuff[stuffKey[i]].class === barKey[j]) {　//若輸入裝備的class === 分類類別　則將該裝備放入bar
-                bar[barKey[j]] = bar[barKey[j]].concat([stuff[stuffKey[i]]])
+                bar[barKey[j]] = bar[barKey[j]].concat(stuff[stuffKey[i]])
             }
         }
     }
 }
 putIntoBar({ a, b, c, d, f }, backpack)
+console.warn("backpack", backpack)
 putIntoBar({ e }, backpack)
 console.warn("backpack", backpack)
 document.addEventListener('keydown', function (e) {
-    console.warn(e.keyCode)
     if (e.keyCode === 73 || e.keyCode === 105) {
         if (document.getElementById("mybar").style.display == "inline") {
             document.getElementById("mybar").style.display = "none"
