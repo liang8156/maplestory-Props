@@ -51,3 +51,39 @@ document.addEventListener('keydown', function (e) {
         }
     }
 });
+
+let stuff1 = document.createElement("IMG");
+stuff1.setAttribute("src", "image/equipment/神秘冥界幽靈雙弩槍.png");
+stuff1.setAttribute("class", "equipment");
+stuff1.setAttribute("alt", "The Pulpit Rock");
+document.getElementById("figure").appendChild(stuff1);
+
+var stuff2 = document.createElement("IMG");
+stuff2.setAttribute("src", "image/equipment/神秘冥界幽靈之弓.png");
+stuff2.setAttribute("class", "equipment");
+stuff2.setAttribute("alt", "The Pulpit Rock");
+document.getElementById("figure").appendChild(stuff2);
+
+var stuff3 = document.createElement("IMG");
+stuff3.setAttribute("src", "image/cash/閃炫方塊.png");
+stuff3.setAttribute("class", "cash");
+stuff3.setAttribute("alt", "The Pulpit Rock");
+document.getElementById("figure").appendChild(stuff3);
+
+var stuff4 = document.createElement("IMG");
+stuff4.setAttribute("src", "image/consumption/超級藥水.png");
+stuff4.setAttribute("class", "consumption");
+stuff4.setAttribute("alt", "The Pulpit Rock");
+document.getElementById("figure").appendChild(stuff4);
+
+var stuff5 = document.createElement("IMG");
+stuff5.setAttribute("src", "image/other/怪物卡.png");
+stuff5.setAttribute("class", "other");
+stuff5.setAttribute("alt", "The Pulpit Rock");
+document.getElementById("figure").appendChild(stuff5);
+
+var stuff6 = document.createElement("IMG");
+stuff6.setAttribute("src", "image/cash/精靈商人.png");
+stuff6.setAttribute("class", "other");
+stuff6.setAttribute("alt", "The Pulpit Rock");
+document.getElementById("figure").appendChild(stuff6);
