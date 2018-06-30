@@ -1,89 +1,67 @@
 let backpack = { equipment: [], consumption: [], other: [], cash: [] }
-let a = {
-    class: "equipment",
-    name: "e1"
-}
-let b = {
-    class: "consumption",
-    name: "c1"
-}
-let c = {
-    class: "equipment",
-    name: "e2"
-}
-let d = {
-    class: "other",
-    name: "o1"
-}
-let f = {
-    class: "cash",
-    name: "ca1"
-}
 
-let e = {
+let 神秘冥界幽靈雙弩槍 = {
+    class: "equipment",
+    filePostion: "image/equipment/神秘冥界幽靈雙弩槍.png",
+    name: "神秘冥界幽靈雙弩槍",
+}
+let 超級藥水 = {
+    class: "consumption",
+    filePostion: "image/consumption/超級藥水.png",
+    name: "超級藥水"
+}
+let 神秘冥界幽靈之弓 = {
+    class: "equipment",
+    filePostion: "image/equipment/神秘冥界幽靈之弓.png",
+    name: "神秘冥界幽靈之弓"
+}
+let 怪物卡 = {
+    class: "other",
+    filePostion: "image/other/怪物卡.png",
+    name: "怪物卡"
+}
+let 閃炫方塊 = {
     class: "cash",
-    name: "ca2"
+    filePostion: "image/cash/閃炫方塊.png",
+    name: "閃炫方塊"
+}
+let 精靈商人 = {
+    class: "cash",
+    filePostion: "image/cash/精靈商人.png",
+    name: "精靈商人"
+}
+let total = { 神秘冥界幽靈雙弩槍, 超級藥水, 神秘冥界幽靈之弓, 怪物卡, 閃炫方塊, 精靈商人 }
+
+for (let i = 0; i < Object.keys(total).length; i++) {
+    //stuff 為裝備內容
+    let stuffName = Object.keys(total)[i]
+    let stuff = total[stuffName];
+    let stuffIMG = document.createElement("IMG");
+    stuffIMG.setAttribute("src", stuff.filePostion);
+    stuffIMG.setAttribute("alt", "The Pulpit Rock");
+    stuffIMG.setAttribute('onclick', "putIntoBar(" + stuffName + ",backpack)");
+    document.getElementById("figure").appendChild(stuffIMG);
 }
 
 function putIntoBar(stuff, bar) {
-    //stuffKey 為輸入裝備
+    //stuff 為輸入裝備
     //barKey 為分類類別
-    let stuffKey = Object.keys(stuff)
     let barKey = Object.keys(bar)
-    for (let i = 0; i < stuffKey.length; i++) {
-        for (let j = 0; j < barKey.length; j++) {
-            if (stuff[stuffKey[i]].class === barKey[j]) {　//若輸入裝備的class === 分類類別　則將該裝備放入bar
-                bar[barKey[j]] = bar[barKey[j]].concat(stuff[stuffKey[i]])
-            }
+    for (let j = 0; j < barKey.length; j++) {
+        if (stuff.class === barKey[j]) {
+            bar[barKey[j]] = bar[barKey[j]].concat(stuff)
         }
     }
+    console.warn("bar", bar)
 }
-putIntoBar({ a, b, c, d, f }, backpack)
-console.warn("backpack", backpack)
-putIntoBar({ e }, backpack)
-console.warn("backpack", backpack)
+
 document.addEventListener('keydown', function (e) {
     if (e.keyCode === 73 || e.keyCode === 105) {
         if (document.getElementById("mybar").style.display == "inline") {
             document.getElementById("mybar").style.display = "none"
+            console.warn("backpack", backpack)
         } else {
             document.getElementById("mybar").style.display = "inline"
         }
     }
 });
-
-let stuff1 = document.createElement("IMG");
-stuff1.setAttribute("src", "image/equipment/神秘冥界幽靈雙弩槍.png");
-stuff1.setAttribute("class", "equipment");
-stuff1.setAttribute("alt", "The Pulpit Rock");
-document.getElementById("figure").appendChild(stuff1);
-
-var stuff2 = document.createElement("IMG");
-stuff2.setAttribute("src", "image/equipment/神秘冥界幽靈之弓.png");
-stuff2.setAttribute("class", "equipment");
-stuff2.setAttribute("alt", "The Pulpit Rock");
-document.getElementById("figure").appendChild(stuff2);
-
-var stuff3 = document.createElement("IMG");
-stuff3.setAttribute("src", "image/cash/閃炫方塊.png");
-stuff3.setAttribute("class", "cash");
-stuff3.setAttribute("alt", "The Pulpit Rock");
-document.getElementById("figure").appendChild(stuff3);
-
-var stuff4 = document.createElement("IMG");
-stuff4.setAttribute("src", "image/consumption/超級藥水.png");
-stuff4.setAttribute("class", "consumption");
-stuff4.setAttribute("alt", "The Pulpit Rock");
-document.getElementById("figure").appendChild(stuff4);
-
-var stuff5 = document.createElement("IMG");
-stuff5.setAttribute("src", "image/other/怪物卡.png");
-stuff5.setAttribute("class", "other");
-stuff5.setAttribute("alt", "The Pulpit Rock");
-document.getElementById("figure").appendChild(stuff5);
-
-var stuff6 = document.createElement("IMG");
-stuff6.setAttribute("src", "image/cash/精靈商人.png");
-stuff6.setAttribute("class", "other");
-stuff6.setAttribute("alt", "The Pulpit Rock");
-document.getElementById("figure").appendChild(stuff6);
