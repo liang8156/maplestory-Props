@@ -55,6 +55,14 @@ function putIntoBar(stuff, bar) {
     console.warn("bar", bar)
 }
 
+function changeBar(onORoffID) {
+    if (document.getElementById(onORoffID).style.display == "inline") {
+        document.getElementById(onORoffID).style.display = "none"
+    } else {
+        document.getElementById(onORoffID).style.display = "inline"
+    }
+}
+
 document.addEventListener('keydown', function (e) {
     if (e.keyCode === 73 || e.keyCode === 105) {
         if (document.getElementById("mybar").style.display == "inline") {
