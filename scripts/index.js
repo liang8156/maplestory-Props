@@ -26,16 +26,17 @@ let e = {
 }
 
 function putIntoBar(stuff, bar) {
+    //stuffKey 為輸入裝備
+    //barKey 為分類類別
     let stuffKey = Object.keys(stuff)
     let barKey = Object.keys(bar)
     for (let i = 0; i < stuffKey.length; i++) {
         for (let j = 0; j < barKey.length; j++) {
-            if (stuff[stuffKey[i]].class === barKey[j]) {
+            if (stuff[stuffKey[i]].class === barKey[j]) {　//若輸入裝備的class === 分類類別　則將該裝備放入bar
                 bar[barKey[j]] = bar[barKey[j]].concat([stuff[stuffKey[i]]])
             }
         }
     }
-    // return bar
 }
 putIntoBar({ a, b, c, d, f }, backpack)
 putIntoBar({ e }, backpack)
