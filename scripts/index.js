@@ -56,11 +56,15 @@ function putIntoBar(stuff, bar) {
 }
 
 function changeBar(onORoffID) {
-    if (document.getElementById(onORoffID).style.display == "inline") {
-        document.getElementById(onORoffID).style.display = "none"
-    } else {
-        document.getElementById(onORoffID).style.display = "inline"
+    let onID = ["equipmentON", "consumptionON", "otherON", "cashON"]
+    let offID = ["equipmentOFF", "consumptionOFF", "otherOFF", "cashOFF"]
+    let index = offID.indexOf(onORoffID)
+    for (let i = 0; i < offID.length; i++) {
+        document.getElementById(offID[i]).style.display = "inline"
+        document.getElementById(onID[i]).style.display = "none"
     }
+    document.getElementById(onORoffID).style.display = "none"
+    document.getElementById(onID[index]).style.display = "inline"
 }
 
 document.addEventListener('keydown', function (e) {
