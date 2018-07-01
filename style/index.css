@@ -9,3 +9,60 @@
     top:60px;
     left:20px;
 }
+
+#equipmentOFF{
+    position: absolute;;
+    width: 35px;
+    height: 18px;
+    top:33px;
+    left:18px;
+}
+#equipmentON{
+    position: absolute;;
+    width: 35px;
+    height: 18px;
+    top:33px;
+    left:18px;
+}
+#consumptionOFF{
+    position: absolute;;
+    width: 35px;
+    height: 18px;
+    top:33px;
+    left:52px;
+}
+#consumptionON{
+    position: absolute;;
+    width: 35px;
+    height: 18px;
+    top:33px;
+    left:52px;
+}
+#otherOFF{
+    position: absolute;;
+    width: 35px;
+    height: 18px;
+    top:33px;
+    left:87px;
+}
+#otherON{
+    position: absolute;;
+    width: 35px;
+    height: 18px;
+    top:33px;
+    left:87px;
+}
+#cashOFF{
+    position: absolute;;
+    width: 35px;
+    height: 18px;
+    top:33px;
+    left:122px;
+}
+#cashON{
+    position: absolute;;
+    width: 35px;
+    height: 18px;
+    top:33px;
+    left:122px;
+}
